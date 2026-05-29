@@ -1,7 +1,7 @@
-import galleryItem from './galleryItem'
-import blogPost from './blogPost'
-import experience from './experience'
-import education from './education'
-import siteSettings from './siteSettings'
+import galleryItem from './gallery'
+import experience from './writing'
+import siteSettings from './homePage'
+import contactInfo from './contactInfo'
+import resume from './resume'
 
-export const schemaTypes = [galleryItem, blogPost, experience, education, siteSettings]
+export const schemaTypes = [galleryItem, experience, siteSettings, contactInfo, resume]

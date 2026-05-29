@@ -1,53 +1,21 @@
 import {defineType, defineField} from 'sanity'
 
 export default defineType({
-  name: 'siteSettings',
-  title: 'Site Settings',
+  name: 'contactInfo',
+  title: 'Contact Information',
   type: 'document',
   fields: [
-    defineField({
-      name: 'profileName',
-      title: 'Profile Name',
-      type: 'string',
-    }),
-    defineField({
-      name: 'headshot',
-      title: 'Headshot',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'bio',
-      title: 'Bio',
-      type: 'text',
-    }),
-    defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'resume',
-      title: 'Resume',
-      type: 'file',
-    }),
-    defineField({
-      name: 'skills',
-      title: 'Skills',
-      type: 'array',
-      of: [{type: 'string'}],
-    }),
     defineField({
       name: 'contactEmail',
       title: 'Contact Email',
       type: 'string',
+      validation: (Rule) => Rule.email(),
     }),
     defineField({
       name: 'contactPhone',
       title: 'Contact Phone',
       type: 'string',
+      validation: (Rule) => Rule.min(10),
     }),
     defineField({
       name: 'instagram',
@@ -93,6 +61,7 @@ export default defineType({
       name: 'agentPhone',
       title: 'Agent Phone',
       type: 'string',
+      validation: (Rule) => Rule.min(10),
     }),
     defineField({
       name: 'agentFax',
